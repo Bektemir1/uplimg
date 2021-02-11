@@ -39,12 +39,6 @@ $('#file-upload').change(function(e){
        });
   });
 
-$('.close-progress').click(()=>{
-  
-
-})
-
-  
   function checkExtenstion(file){
     const arrayFile = file.split('');
     const indexDot = arrayFile.indexOf('.');
@@ -55,6 +49,7 @@ $('.close-progress').click(()=>{
       $('.last-form').css({"display":"none"})
       }
       else{
+       
         move()
       }
   }
@@ -84,6 +79,8 @@ $('.close-progress').click(()=>{
            count=0;
       }
        else {
+       
+        
            width+=5;
            count+=4;
            elem.style.width = width + "%";
@@ -93,7 +90,16 @@ $('.close-progress').click(()=>{
            $('.last-form').css({"display":"none"})
            $('.progressing').css({"display": "block"}) 
            
+           $('.close-progress').click(()=>{
+            $('.form').css({"display": "block"})
+            $('.error-block').css({"display": "none"})
+            $('.last-form').css({"display":"none"})
+            $('.progressing').css({"display": "none"}) 
+           })
+           
          }
+        
+
        }
      }
    }
