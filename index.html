@@ -34,7 +34,7 @@
                  <form class="form">
                     <img  src='img/Vector.svg'>  <br>
                     <span>Для начала загрузки отпустите файл</span>
-                    <input  id="file-upload" type="file" multiple accept=".xlsx">
+                    <input  id="file-upload" type="file" multiple accept=".xlsx" >
                 </form>
             
 
@@ -74,14 +74,14 @@
                           <span class="mr-5 size"></span>
                     </div>
                 </div>
-                     <img class="close-file" src="img/closeFIles.svg">
+                     <img id="close-file" onclick="closeFile()" class="close-file" src="img/closeFIles.svg">
             </div>
           
         </div>
         
   
         <div class="upload-buttons d-flex">
-            <button type="submit" id="import" class="import-btn mr-2" >Импорт</button>
+            <button  id="import" disabled class="import-btn mr-2" >Импорт</button>
             <button id="close-content" class="close-btn">Закрыть</button>
         </div>
 

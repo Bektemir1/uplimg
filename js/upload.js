@@ -8,35 +8,36 @@ $(document).ready(()=>{
     })
  })
 
+
  $(document).ready(function() {
   $('.loading-text').click(()=>{
-    $('#file-upload').click();
+    $('#file-upload[type=file]').click();
       
   })
-$('.close-file').click(()=>{
-      $('.file-info').css({"display":"none"})
-  })
-const arrayFile = [];
+
   const handleFiles = (files) => {
   const selectedFiles = [...files];
   selectedFiles.map((item)=>{
             const fileName = item.name;
             const fileSize = item.size;
-        
-              arrayFile.push(fileName)
-              console.log(arrayFile[arrayFile.length-1])
-              console.log(arrayFile)
-              checkExtenstion(fileName)
+             checkExtenstion(fileName)
               $('.names').text(fileName).css({"font-weight":"600"});
               $('.size').text(fileSize+" KB");
               $('.progress-name').text(fileName);
     })
 }
+$('.close-file').click(()=>{
+  $('.file-info').css({"display":"none"})
+  $('#file-upload').val('');
+})
+
+
 $('#file-upload[type=file]').change(function(e){
     handleFiles(e.target.files)
       });
- 
-   
+     
+    
+      
    
     function checkExtenstion(file){
     const arrayFile = file.split('');
@@ -81,7 +82,7 @@ $('#file-upload[type=file]').change(function(e){
              $('.success-block').css({"display":"none"})
              $('.last-form').css({"display":'block'})
             $('.file-info').css({"display":"block"})
-          
+              $('#import').prop("disable",true);
 
              },2000)
           
@@ -95,7 +96,7 @@ $('#file-upload[type=file]').change(function(e){
        
         
            width+=5;
-           count+=4;
+           count+=5;
            elem.style.width = width + "%";
            document.getElementById('percent').innerHTML = count;
            $('.form').css({"display": "none"})
