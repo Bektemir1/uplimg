@@ -10,8 +10,18 @@ body{
      position: fixed;
      overflow-x: auto;
      z-index:1;
-
+    display: none;
 }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+/* @keyframes fadeOut {
+    from { opacity: 1; }
+      to { opacity: 0; }
+} */
 
 
 .upload-content{
@@ -19,7 +29,7 @@ body{
     background: #fff;
     border-radius:10px;
     margin: 100px auto;
-   
+    animation: fadeIn 0.5s
 }
 
 .upload-title{
@@ -141,6 +151,7 @@ input[type="file"] {
     
 
 }
+
 .progress{
     height: 7px;
     margin: 15px 0;

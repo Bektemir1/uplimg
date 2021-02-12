@@ -1,9 +1,16 @@
 $(document).ready(()=>{
    $('#modal-btn').click(()=>{
         $('.upload-section').css({"display":"block"})
+        $('.upload-content').css({"animation":"fadeIn 0.5s"})
+       
     })
     $('#close-content').click(()=>{
-      $('.upload-section').css({"display": "none" })
+      $('.upload-content').css({"animation":"fadeOut 0.5s"})
+      setTimeout(()=>{
+        $('.upload-section').css({"display": "none" })
+      },500)
+    
+      
       
     })
  })
